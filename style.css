@@ -80,7 +80,12 @@ footer {
   width: 8rem;
 }
 
-.icons:hover {
+.icons svg {
+  fill: var(--grayish-blue);
+}
+
+.icons svg:hover {
+  fill: var(--soft-red);
 }
 
 .hills {
