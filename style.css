@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+:root {
+  --grayish-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+
+  --darker-soft-red: hsl(345, 92%, 63%);
+  --darker-desaturated-blue: hsl(236, 21%, 20%);
+
+  --white: hsl(0, 0%, 100%);
+  --dark-desaturated-blue: hsl(236, 21%, 26%);
+  --very-dark-blue: hsl(235, 16%, 14%);
+  --mostly-black-blue: hsl(234, 17%, 12%);
+}
+
+body {
+  height: 100vh;
+  background-image: url('./images/bg-stars.svg');
+  background-color: hsl(235, 16%, 14%);
+  background-repeat: no-repeat;
+  color: white;
+  width: 100%;
+  font-size: 14px;
+}
+
+.wrapper {
+  height: 100vh;
+  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 1.1875rem;
+  line-height: 126.3%;
+  letter-spacing: 0.33844rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: calc(100vw - 2rem);
+  gap: 1rem;
+  text-align: center;
+  padding-bottom: 10rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 18vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 8rem;
+}
+
+.icons:hover {
+}
+
+.hills {
+  z-index: -1;
+  position: fixed;
+  background-repeat: no-repeat;
+  bottom: 0;
+  width: 100%;
+  height: 25vh;
+}
+
+.countdown {
+  display: flex;
+}
+
+.time-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+  color: var(--grayish-blue);
+}
+
+.time-group {
+  display: flex;
+  height: 65px;
+}
+
+.time-segment {
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+  width: 70px;
+}
+
+.segment-display {
+  position: relative;
+  height: 100%;
+}
+
+.segment-display__top, .segment-display__bottom {
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  position: relative;
+  border-radius: 5px;
+}
+
+.segment-display__top {
+  background-color: var(--darker-desaturated-blue);
+  color: var(--darker-soft-red);
+  line-height: 1.8;
+  border-radius: 5px;
+}
+
+.segment-display__bottom {
+  background-color: var(--dark-desaturated-blue);
+  color: var(--soft-red);
+  line-height: 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.15);
+}
+
+.segment-overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 70px;
+  perspective: 400px;
+}
+
+.segment-overlay__top, .segment-overlay__bottom {
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+}
+
+.segment-overlay__top {
+  top: 0;
+  line-height: 1.8;
+  color: var(--darker-soft-red);
+  background-color: var(--darker-desaturated-blue);
+  transform-origin: bottom;
+}
+
+.segment-overlay__bottom {
+  bottom: 0;
+  line-height: 0;
+  color: var(--soft-red);
+  background-color: var(--dark-desaturated-blue);
+  border-top: 1px solid var(--very-dark-blue);
+  transform-origin: top;
+  
+}
+
+.segment-overlay.flip .segment-overlay__top {
+  animation: flip-top 0.8s linear;
+}
+
+.segment-overlay.flip .segment-overlay__bottom {
+  animation: flip-bottom 0.8s linear;
+}
+
+@media (min-width: 768px) {
+
+  h1 {
+    font-size: 1.375rem;
+    letter-spacing: 0.47094rem;
+  }
+
+  main {
+    width: 60%;
+  }
+
+  .countdown {
+    gap: 2rem;
+  }
+
+  .time-segment {
+    width: 148px;
+    font-size: 80px;
+  }
+
+  .time-section {
+    font-size: 14px;
+  }
+
+  .time-group {
+    height: 140px;
+  }
+
+  .segment-overlay {
+    width: 148px;
+  }
+
+}
+
+@keyframes flip-top  {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50%, 100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+
+@keyframes flip-bottom  {
+  0%, 50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}

@@ -7,25 +7,93 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Launch countdown timer</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="index.js"></script>
 </head>
 <body>
 
-  We're launching soon
-
-  Days
-  Hours
-  Minutes
-  Seconds
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="wrapper">
+    <header class="title">
+      <h1>We're Launching Soon</h1>
+    </header>
+    
+    <main class="countdown">
+      
+    <div class="time-section" id="days">
+      <div class="time-group">
+        <div class="time-segment">
+          <div class="segment-display">
+            <div class="segment-display__top">00</div>
+            <div class="segment-display__bottom">00</div>
+            <div class="segment-overlay">
+              <div class="segment-overlay__top">00</div>
+              <div class="segment-overlay__bottom">00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>Days</p>
+    </div>
+    <div class="time-section" id="hours">
+      <div class="time-group">
+        <div class="time-segment">
+          <div class="segment-display">
+            <div class="segment-display__top">00</div>
+            <div class="segment-display__bottom">00</div>
+            <div class="segment-overlay">
+              <div class="segment-overlay__top">00</div>
+              <div class="segment-overlay__bottom">00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>Hours</p>
+    </div>
+    <div class="time-section" id="minutes">
+      <div class="time-group">
+        <div class="time-segment">
+          <div class="segment-display">
+            <div class="segment-display__top">00</div>
+            <div class="segment-display__bottom">00</div>
+            <div class="segment-overlay">
+              <div class="segment-overlay__top">00</div>
+              <div class="segment-overlay__bottom">00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>Minutes</p>
+    </div>
+    <div class="time-section" id="seconds">
+      <div class="time-group">
+        <div class="time-segment">
+          <div class="segment-display">
+            <div class="segment-display__top">00</div>
+            <div class="segment-display__bottom">00</div>
+            <div class="segment-overlay">
+              <div class="segment-overlay__top">00</div>
+              <div class="segment-overlay__bottom">00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>Seconds</p>
+    </div>
+    </main>
+    
+    <footer>
+      <div class="icons">
+        <img src="./images/icon-facebook.svg" alt="">
+        <img src="./images/icon-pinterest.svg" alt="">
+        <img src="./images/icon-instagram.svg" alt="">
+      </div>
+      <img class="hills" src="./images/pattern-hills.svg" alt="">
+    </footer>
   </div>
+
+
 </body>
 </html>
