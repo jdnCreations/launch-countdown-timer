@@ -1,4 +1,4 @@
-const targetDate = '2023-07-26T19:00:00';
+const targetDate = new Date(+Date.now() + 12096e5);
 
 function minTwoDigits(number) {
   return (number < 10 ? '0' : '') + number;
@@ -100,7 +100,7 @@ function getTimeRemaining(targetDateTime) {
 }
 
 function updateAllSegments() {
-  const targetTimeStamp = new Date(targetDate).getTime();
+  const targetTimeStamp = targetDate.getTime();
   const timeRemainingBits = getTimeRemaining(targetTimeStamp);
   
 
